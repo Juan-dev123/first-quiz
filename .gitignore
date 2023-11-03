@@ -197,3 +197,6 @@ replay_pid*
 
 #pycharm folder
 part1/.idea/
+
+#intellij idea folder
+part2/.idea/
