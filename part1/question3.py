@@ -25,20 +25,54 @@
 # The `alchemy_combine()` function will use your oven. You can see the expected 
 # formulas and their outputs in the test file, `question3_test.py`.
 
+class Oven:
+    boiledMaterials = {
+        " ".join(tuple(["lead", "mercury"])): "gold",
+        " ".join(tuple(["cheese", "dough", "tomato"])): "pizza",
+    }
+    frozenMaterials = {
+        " ".join(tuple(["water", "air"])): "snow",
+    }
+    waitMaterials = {
+        " ".join(tuple(["ice", "lemon", "water"])): "lemonade",
+    }
+
+    def __init__(self):
+        self.ingredients = ""
+        self.output = None
+
+    def add(self, item):
+        if self.ingredients == "":
+            self.ingredients = item
+            return
+        self.ingredients += " " + item
+
+    def freeze(self):
+        self.output = self.frozenMaterials[self.ingredients]
+
+    def boil(self):
+        self.output = self.boiledMaterials[self.ingredients]
+
+    def wait(self):
+        self.output = self.waitMaterials[self.ingredients]
+
+    def get_output(self):
+        return self.output
+
 # This function should return an oven instance!
 def make_oven():
-  None
+    return Oven()
+
 
 def alchemy_combine(oven, ingredients, temperature):
-  
-  for item in ingredients:
-    oven.add(item)
+    for item in ingredients:
+        oven.add(item)
 
-  if temperature < 0:
-    oven.freeze()
-  elif temperature >= 100:
-    oven.boil()
-  else:
-    oven.wait()
+    if temperature < 0:
+        oven.freeze()
+    elif temperature >= 100:
+        oven.boil()
+    else:
+        oven.wait()
 
-  return oven.get_output()
+    return oven.get_output()
