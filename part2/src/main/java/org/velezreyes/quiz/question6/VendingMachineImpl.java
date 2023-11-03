@@ -48,4 +48,9 @@ public class VendingMachineImpl implements VendingMachine {
     }
     insertedMoney -= drink.getPrice();
   }
+
+  @Override
+  public double getInsertedMoney() {
+    return insertedMoney;
+  }
 }

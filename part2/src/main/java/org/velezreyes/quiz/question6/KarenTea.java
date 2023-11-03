@@ -14,6 +14,6 @@ public class KarenTea implements Drink {
 
     @Override
     public double getPrice() {
-        return 1;
+        return 0.75;
     }
 }

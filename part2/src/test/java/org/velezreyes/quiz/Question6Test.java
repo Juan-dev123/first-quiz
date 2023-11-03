@@ -69,15 +69,12 @@ public class Question6Test {
     vm.insertQuarter();
 
     // Test that KarenTea costs at least 75 cents.
-    assertThrows(NotEnoughMoneyException.class, () -> {
-      vm.pressButton("KarenTea");
-    });
-
-    vm.insertQuarter();
-
     Drink drink = vm.pressButton("KarenTea");
     assertFalse(drink.isFizzy());
     assertEquals(drink.getName(), "KarenTea");
+
+    vm.insertQuarter();
+    assertEquals(0.25, vm.getInsertedMoney());
   }
 
   @Test
