@@ -15,8 +15,8 @@ Below, list by sections of the OWASP Top 10 for 2021 what I would do to make the
 -	Do not store sensitive information unnecessarily, discard it or delete it or get rid of it as soon as possible.
      
 **Injection**
--	Validate the data provided by the user on the backend to avoid SQL injection and Cross Site Scripting.
--	Validate the data provided by the user on the frontend to avoid SQL injection and Cross Site Scripting.
+-	Validate in the backend the data provided by the user to avoid SQL injection and Cross Site Scripting.
+-	Validate in the frontend the data provided by the user to avoid SQL injection and Cross Site Scripting.
 -	Use an ORM in the Python backend for communication with the database.
      
 **Security Misconfiguration**
